@@ -1,55 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#202124">
   <title>Про мене</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <header>
-    <div class="logo">ЩД</div>
-    <nav>
-      <ul>
-        <li><a href="#">Головна</a></li>
-        <li><a href="about.html" class="active">Про мене</a></li>
-        <li><a href="#">Портфоліо</a></li>
-        <li><a href="#">Контакти</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="page-width header-inner">
+      <strong>Денис Щербань</strong>
+      <nav aria-label="Навігація">
+        <a href="index.html">Головна</a>
+        <a href="about.html" aria-current="page">Про мене</a>
+      </nav>
+    </div>
   </header>
-
-  <section class="title">
-    <h1>Щербань Денис</h1>
-    <p>Навчання | Дизайн | Розробка</p>
-  </section>
-
-  <div class="line"></div>
-
-  <section class="about">
-    <div class="photo">ЩД</div>
-    <div class="text">
-      <h2>Вітаю! Я Денис.</h2>
+  <main class="page-width">
+    <section class="section">
+      <h1>Вітаю! Я Денис.</h1>
       <p>Я вивчаю веб-розробку. Вмію робити сторінки на HTML і CSS та підлаштовувати їх під телефон.</p>
       <p>Мені подобається, коли сторінка виглядає акуратно і її легко читати.</p>
-      <a href="#" class="button">Зв'язатися</a>
-    </div>
-  </section>
-
-  <section class="skills">
-    <h2>Мої навички</h2>
-    <p>Те, що я вже вмію робити.</p>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>Flexbox</li>
-    </ul>
-  </section>
-
-  <footer>
-    <p>Контакти: hhhfffggg89@gmail.com</p>
+      <p><a href="mailto:hhhfffggg89@gmail.com">Зв'язатися</a></p>
+    </section>
+    <section class="section">
+      <h2>Мої навички</h2>
+      <p>Те, що я вже вмію робити.</p>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Flexbox</li>
+      </ul>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <p>Контакти: <a href="mailto:hhhfffggg89@gmail.com">hhhfffggg89@gmail.com</a></p>
   </footer>
-
 </body>
 </html>
