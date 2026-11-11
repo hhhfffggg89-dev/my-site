@@ -1,205 +1,182 @@
-/* універсальний селектор */
+:root {
+  --bg: #202124;
+  --bg-header: #292a2d;
+  --border: #3c4043;
+  --text: #e8eaed;
+  --muted: #9aa0a6;
+  --link: #8ab4f8;
+  --accent-line: #5f6368;
+}
+
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
-/* селектори за тегом */
+html {
+  background: var(--bg);
+}
+
 body {
-  font-family: Arial, sans-serif;
-  color: #333;
-  line-height: 1.5;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-/* груповий селектор */
-h1, h2 {
-  font-family: Georgia, serif;
-  color: #4a6360;
+a {
+  color: var(--link);
 }
 
-a:focus {
-  outline: 2px solid #4a6360;
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-/* шапка */
-header {
+.page-width {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Header and navigation */
+.site-header {
+  background: var(--bg-header);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  border-bottom: 1px solid #ccc;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  min-height: 64px;
 }
 
-/* селектори за класом */
-.logo {
-  background: #4a6360;
-  color: white;
-  padding: 10px 12px;
-  font-weight: bold;
-}
-
-/* вкладені селектори */
-nav ul {
+.site-header nav {
   display: flex;
-  gap: 20px;
-  list-style: none;
+  gap: 18px;
 }
 
-nav a {
-  color: #333;
+.site-header nav a {
+  color: var(--link);
   text-decoration: none;
-  font-weight: bold;
 }
 
-/* псевдоклас :hover */
-nav a:hover {
-  color: #e07a70;
+.site-header nav a:hover {
+  text-decoration: underline;
 }
 
-/* комбінований селектор (тег + клас) */
-a.active {
-  border-bottom: 2px solid #e07a70;
+.site-header nav a[aria-current="page"] {
+  color: var(--text);
+  font-weight: 600;
 }
 
-/* верхній блок з іменем */
-.title {
-  text-align: center;
-  padding: 50px 20px;
-}
-
-.title h1 {
-  font-size: 48px;
-}
-
-.title p {
-  margin-top: 10px;
-  color: #e07a70;
-}
-
-.line {
-  height: 60px;
-  background: #4a6360;
-}
-
-/* блок "про мене" */
-.about {
-  display: flex;
+/* Home page intro */
+.intro {
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 40px;
-  padding: 50px 10%;
+  gap: 32px;
+  padding: 64px 0;
+  border-bottom: 1px solid var(--border);
 }
 
-.photo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: #4a6360;
-  color: white;
-  font-size: 60px;
+.intro h1 {
+  margin: 0 0 16px;
+  font-size: 2.2rem;
+  line-height: 1.2;
 }
 
-/* дочірній селектор */
-.about > .text {
-  flex: 1;
+.intro p {
+  margin: 0 0 16px;
 }
 
-.text p {
-  margin-bottom: 10px;
+.game-image {
+  width: 180px;
 }
 
-/* сусідній селектор */
-h2 + p {
-  margin-top: 5px;
+/* Sections */
+.section {
+  padding: 48px 0;
 }
 
-a.button {
-  display: inline-block;
-  margin-top: 5px;
-  padding: 10px 25px;
-  background: #e07a70;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
+h1,
+h2,
+h3 {
+  color: var(--text);
 }
 
-a.button:hover {
-  background: #4a6360;
+h2 {
+  margin: 0 0 24px;
+  font-size: 1.5rem;
 }
 
-/* блок навичок */
-.skills {
-  padding: 0 10% 40px;
+main p,
+main li {
+  max-width: 70ch;
 }
 
-.skills ul {
-  display: flex;
-  gap: 15px;
-  margin-top: 15px;
-  list-style: none;
+.game-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
 }
 
-.skills li {
-  flex: 1;
-  padding: 20px;
-  text-align: center;
-  border: 1px solid #ccc;
-  border-top-width: 4px;
+.game-list article {
+  border-left: 2px solid var(--accent-line);
+  padding-left: 18px;
 }
 
-/* псевдокласи :first-child, :nth-child, :last-child */
-.skills li:first-child {
-  border-top-color: #e07a70;
+.game-list h3 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
 }
 
-.skills li:nth-child(2) {
-  border-top-color: #2f7f7a;
+.game-list p {
+  margin: 0;
 }
 
-.skills li:last-child {
-  border-top-color: #4a6360;
+/* Footer */
+footer,
+.site-footer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 20px 40px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
-footer {
-  background: #4a6360;
-  color: white;
-  text-align: center;
-  padding: 25px;
+footer p,
+.site-footer p {
+  margin: 0;
 }
 
-/* для екранів до 768px (телефони) */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    gap: 10px;
+/* Keyboard focus */
+a:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 3px;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .intro {
+    grid-template-columns: 1fr;
+    padding: 40px 0;
   }
 
-  nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
+  .game-image {
+    width: 140px;
+    order: -1;
   }
 
-  .title h1 {
-    font-size: 32px;
-  }
-
-  .about {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .photo {
-    width: 150px;
-    height: 150px;
-    font-size: 45px;
-  }
-
-  .skills ul {
-    flex-direction: column;
+  .game-list {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 }
