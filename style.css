@@ -1,0 +1,205 @@
+/* універсальний селектор */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* селектори за тегом */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* груповий селектор */
+h1, h2 {
+  font-family: Georgia, serif;
+  color: #4a6360;
+}
+
+a:focus {
+  outline: 2px solid #4a6360;
+}
+
+/* шапка */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* селектори за класом */
+.logo {
+  background: #4a6360;
+  color: white;
+  padding: 10px 12px;
+  font-weight: bold;
+}
+
+/* вкладені селектори */
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+nav a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* псевдоклас :hover */
+nav a:hover {
+  color: #e07a70;
+}
+
+/* комбінований селектор (тег + клас) */
+a.active {
+  border-bottom: 2px solid #e07a70;
+}
+
+/* верхній блок з іменем */
+.title {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.title h1 {
+  font-size: 48px;
+}
+
+.title p {
+  margin-top: 10px;
+  color: #e07a70;
+}
+
+.line {
+  height: 60px;
+  background: #4a6360;
+}
+
+/* блок "про мене" */
+.about {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 50px 10%;
+}
+
+.photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #4a6360;
+  color: white;
+  font-size: 60px;
+}
+
+/* дочірній селектор */
+.about > .text {
+  flex: 1;
+}
+
+.text p {
+  margin-bottom: 10px;
+}
+
+/* сусідній селектор */
+h2 + p {
+  margin-top: 5px;
+}
+
+a.button {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 10px 25px;
+  background: #e07a70;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+a.button:hover {
+  background: #4a6360;
+}
+
+/* блок навичок */
+.skills {
+  padding: 0 10% 40px;
+}
+
+.skills ul {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+  list-style: none;
+}
+
+.skills li {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-top-width: 4px;
+}
+
+/* псевдокласи :first-child, :nth-child, :last-child */
+.skills li:first-child {
+  border-top-color: #e07a70;
+}
+
+.skills li:nth-child(2) {
+  border-top-color: #2f7f7a;
+}
+
+.skills li:last-child {
+  border-top-color: #4a6360;
+}
+
+footer {
+  background: #4a6360;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+
+/* для екранів до 768px (телефони) */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .title h1 {
+    font-size: 32px;
+  }
+
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .photo {
+    width: 150px;
+    height: 150px;
+    font-size: 45px;
+  }
+
+  .skills ul {
+    flex-direction: column;
+  }
+}
